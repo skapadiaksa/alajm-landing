@@ -111,7 +111,7 @@
     display: flex; flex-direction: column;
     padding: 2rem 2rem 1.75rem;
     border-radius: 16px;
-    min-height: 25rem;
+    min-height: 19rem;
     transition: transform .2s;
   }
   .card:hover { transform: translateY(-5px); }
@@ -151,28 +151,8 @@
   .details dd { margin: 0; color: var(--on-dark-muted); }
   .details a { color: var(--on-dark); text-underline-offset: 4px; }
 
-  form { display: grid; gap: 1.1rem; }
-  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
-  label { display: block; font-weight: 500; font-size: .95rem; margin-bottom: .35rem; }
-  input, select, textarea {
-    width: 100%;
-    font: inherit; font-size: 1rem;
-    color: var(--on-dark);
-    background: #1e1e1b;
-    border: 1px solid #4a4a44;
-    border-radius: 4px;
-    padding: .75rem .9rem;
-  }
-  select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--on-dark-muted) 50%), linear-gradient(135deg, var(--on-dark-muted) 50%, transparent 50%); background-position: calc(100% - 1.15rem) 55%, calc(100% - .8rem) 55%; background-size: .35rem .35rem; background-repeat: no-repeat; padding-right: 2.25rem; }
-  textarea { min-height: 7.5rem; resize: vertical; }
-  input:focus, select:focus, textarea:focus { border-color: var(--leaf-light); outline: 2px solid var(--leaf-light); outline-offset: 1px; }
-  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  .btn.light { background: var(--on-dark); color: var(--ink); border-color: var(--on-dark); justify-self: start; }
+  .btn.light { background: var(--on-dark); color: var(--ink); border-color: var(--on-dark); }
   .btn.light:hover { background: var(--leaf-light); border-color: var(--leaf-light); color: var(--ink); }
-  .btn[disabled] { opacity: .6; cursor: wait; }
-  .status { min-height: 1.5rem; margin: 0; font-weight: 500; }
-  .status.ok { color: var(--leaf-light); }
-  .status.err { color: #ffb4a8; }
 
   /* Map */
   .map { margin-top: clamp(2.5rem, 6vw, 4rem); }
@@ -276,8 +256,7 @@
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#business">What we do</a>
-      <a href="#location">Location</a>
-      <a class="btn" href="#contact">Send an enquiry</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -293,8 +272,8 @@
       <h1>Your on-demand sales team for fresh produce.</h1>
       <p class="lede">A family business since 1957, serving buyers across Saudi Arabia from the central vegetable market in Jeddah.</p>
       <div class="actions">
-        <a class="btn" href="#contact">Send an enquiry</a>
-        <a class="btn ghost" href="#business">See what we do</a>
+        <a class="btn" href="#business">See what we do</a>
+        <a class="btn ghost" href="#contact">Contact us</a>
       </div>
       <ul class="facts">
         <li><strong>Since 1957</strong><span>Family business</span></li>
@@ -318,8 +297,6 @@
           <h3>Wholesale</h3>
           <p>Sell in the wholesale markets of Saudi Arabia.</p>
           <p>Fresh vegetables and fruit supplied daily from our base in the central vegetable market, Jeddah.</p>
-          <div class="spacer"></div>
-          <a class="card-cta" href="#contact" data-interest="Wholesale">Ask about wholesale</a>
         </article>
 
         <article class="card services">
@@ -333,8 +310,6 @@
             <li>Labor</li>
             <li>Storage</li>
           </ul>
-          <div class="spacer"></div>
-          <a class="card-cta" href="#contact" data-interest="Services">Ask about services</a>
         </article>
 
         <article class="card intel">
@@ -342,8 +317,6 @@
           <h3>Intelligence</h3>
           <p>Get market reports to help plan your next shipment.</p>
           <p>Price and supply updates from the market floor, so you buy and ship with current numbers.</p>
-          <div class="spacer"></div>
-          <a class="card-cta" href="#contact" data-interest="Intelligence">Ask about intelligence</a>
         </article>
 
       </div>
@@ -357,82 +330,38 @@
       <div class="wrap">
         <div class="contact-grid">
           <div>
-            <h2>Tell us what you need</h2>
-            <p class="intro">Send us your volumes, products and timing. We reply to every enquiry.</p>
-            <dl class="details">
-              <div>
-                <dt>Email</dt>
-                <dd><a href="mailto:alajm@alajm.sa">alajm@alajm.sa</a></dd>
-              </div>
-              <div>
-                <dt>Address</dt>
-                <dd>5149 Nur ul deen Al Alami Street<br>Al Safa district, Jeddah<br>Saudi Arabia</dd>
-              </div>
-            </dl>
+            <h2>Get in touch</h2>
+            <p class="intro">Email us your products, volumes and timing and we will reply.</p>
+            <a class="btn light" href="mailto:alajm@alajm.sa?subject=SITE%20LEAD%20%7C%20Enquiry">alajm@alajm.sa</a>
           </div>
-
-          <form id="lead-form" action="https://formsubmit.co/alajm@alajm.sa" method="POST" novalidate>
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="SITE LEAD | alajm.sa">
-            <div class="hp" aria-hidden="true">
-              <label for="honey">Leave this empty</label>
-              <input type="text" id="honey" name="_honey" tabindex="-1" autocomplete="off">
-            </div>
-
-            <div class="row">
-              <div>
-                <label for="name">Your name</label>
-                <input id="name" name="name" type="text" autocomplete="name" required>
-              </div>
-              <div>
-                <label for="company">Company</label>
-                <input id="company" name="company" type="text" autocomplete="organization">
-              </div>
-            </div>
-            <div class="row">
-              <div>
-                <label for="phone">Phone or WhatsApp</label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" required>
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required>
-              </div>
+          <dl class="details">
+            <div>
+              <dt>Address</dt>
+              <dd>5149 Nur ul din Al Alami St<br>Al Safa district, Jeddah<br>Saudi Arabia</dd>
             </div>
             <div>
-              <label for="interest">I'm interested in</label>
-              <select id="interest" name="interest">
-                <option>Wholesale</option>
-                <option>Services</option>
-                <option>Intelligence</option>
-                <option>Something else</option>
-              </select>
+              <dt>Email</dt>
+              <dd><a href="mailto:alajm@alajm.sa">alajm@alajm.sa</a></dd>
             </div>
-            <div>
-              <label for="message">What do you need?</label>
-              <textarea id="message" name="message" placeholder="Products, weekly volumes, delivery location" required></textarea>
-            </div>
-            <button class="btn light" type="submit" id="submit-btn">Send enquiry</button>
-            <p class="status" id="form-status" role="status" aria-live="polite"></p>
-          </form>
+          </dl>
         </div>
 
         <div class="map" id="location">
           <div class="map-frame">
             <div class="map-fallback">
               <p>Map not loading?</p>
-              <a class="btn light" href="https://www.google.com/maps/search/?api=1&amp;query=Jeddah+Central+Vegetable+Market,+Al+Safa,+Jeddah" target="_blank" rel="noopener">Open in Google Maps</a>
+              <a class="btn light" href="https://www.google.com/maps/search/?api=1&amp;query=5149+Nur+ul+din+Al+Alami+St,+Al+Safa,+Jeddah,+Saudi+Arabia" target="_blank" rel="noopener">Open in Google Maps</a>
             </div>
             <iframe
-              title="Map of the central vegetable market, Al Safa, Jeddah"
-              src="https://www.google.com/maps?q=Jeddah+Central+Vegetable+Market,+Al+Safa,+Jeddah&amp;hl=en&amp;z=15&amp;output=embed"
+              title="Map of Al Ajm, 5149 Nur ul din Al Alami St, Al Safa, Jeddah"
+              src="https://www.google.com/maps?q=5149+Nur+ul+din+Al+Alami+St,+Al+Safa,+Jeddah,+Saudi+Arabia&amp;hl=en&amp;z=15&amp;output=embed"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               allowfullscreen></iframe>
           </div>
-          <p>5149 Nur ul deen Al Alami Street, Al Safa, Jeddah.
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=Jeddah+Central+Vegetable+Market,+Al+Safa,+Jeddah" target="_blank" rel="noopener">Open in Google Maps</a></p>
+          <p>5149 Nur ul din Al Alami St, Al Safa, Jeddah.
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=5149+Nur+ul+din+Al+Alami+St,+Al+Safa,+Jeddah,+Saudi+Arabia" target="_blank" rel="noopener">Open in Google Maps</a></p>
+        </div>
         </div>
       </div>
     </section>
@@ -449,48 +378,6 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Card buttons preselect the matching interest in the form.
-  var select = document.getElementById('interest');
-  document.querySelectorAll('[data-interest]').forEach(function (link) {
-    link.addEventListener('click', function () { select.value = link.getAttribute('data-interest'); });
-  });
-
-  // Lead form: sends to alajm@alajm.sa (via FormSubmit) with subject "SITE LEAD | name | company | interest".
-  var form = document.getElementById('lead-form');
-  var statusEl = document.getElementById('form-status');
-  var btn = document.getElementById('submit-btn');
-  var ENDPOINT = 'https://formsubmit.co/ajax/alajm@alajm.sa';
-
-  function setStatus(text, kind) { statusEl.textContent = text; statusEl.className = 'status ' + (kind || ''); }
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      setStatus('Please fill in your name, phone, email and message.', 'err');
-      return;
-    }
-    var data = new FormData(form);
-    var parts = ['SITE LEAD', data.get('name')];
-    if (data.get('company')) parts.push(data.get('company'));
-    parts.push(data.get('interest'));
-    data.set('_subject', parts.join(' | '));
-
-    btn.disabled = true;
-    setStatus('Sending...', '');
-    fetch(ENDPOINT, { method: 'POST', headers: { 'Accept': 'application/json' }, body: data })
-      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok && String(d.success) === 'true' }; }); })
-      .then(function (res) {
-        if (!res.ok) throw new Error('send failed');
-        form.reset();
-        setStatus('Thank you. We received your enquiry and will reply soon.', 'ok');
-      })
-      .catch(function () {
-        setStatus('Your enquiry was not sent. Please email us at alajm@alajm.sa.', 'err');
-      })
-      .then(function () { btn.disabled = false; });
-  });
 </script>
 </body>
 </html>
